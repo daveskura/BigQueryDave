@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling","google.cloud"]
+
+build-backend = "hatchling.build"
+
+[project]
+name = "bigquerydave_package"
+version = "1.0.0"
+authors = [
+  { name="Dave Skura", email="dskura@gmail.com" },
+]
+description = "A wrapper for simplified BigQuery using google.cloud"
+readme = "README.md"
+requires-python = ">=3.7"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/daveskura/bigquerydave"
+"Author Linkedin" = "https://www.linkedin.com/in/2166883"
