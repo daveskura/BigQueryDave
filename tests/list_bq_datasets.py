@@ -3,16 +3,6 @@
   
   File Description:
 """
+from bigquerydave_package.bigquerydave import bq
 
-from google.cloud import bigquery
-
-# Construct a BigQuery client object.
-client = bigquery.Client()
-
-datasets = list(client.list_datasets())  # Make an API request.
-project = client.project
-
-if datasets:
-    print('project: ' + project)
-    for dataset in datasets:
-        print('\tdataset: ' + dataset.dataset_id)
+bq().list_bq_datasets()

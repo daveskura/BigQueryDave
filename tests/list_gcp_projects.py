@@ -1,17 +1,9 @@
 """
   Dave Skura
-  
-  File Description:
+
 """
+from bigquerydave_package.bigquerydave import gcp
 
-from googleapiclient import discovery
-from oauth2client.client import GoogleCredentials
-from google.oauth2 import service_account
+gcp().list_gcp_projects()
 
-credentials = GoogleCredentials.get_application_default()
-service = discovery.build('cloudresourcemanager', 'v1', credentials=credentials)
-request = service.projects().list()
-response = request.execute()
-for project in response.get('projects', []):
-	print(project['projectId'])
 
