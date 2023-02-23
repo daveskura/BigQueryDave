@@ -13,7 +13,7 @@ from bigquerydave_package.bigquerydave import bq
 
 ### try methods
 
-gcp().list_gcp_projects()
-bq().list_bq_datasets()
-bq().list_bq_tables('watchful-lotus-364517.dave')
-bq().estimate_query('SELECT CURRENT_TIMESTAMP')
+#### gcp().list_gcp_projects()
+#### bq().list_bq_datasets()
+#### bq().list_bq_tables('watchful-lotus-364517.dave')
+#### bq().estimate_query('SELECT CURRENT_TIMESTAMP')
