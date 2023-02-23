@@ -1,6 +1,4 @@
-# BigQueryDave
-
-A wrapper on the bigquery libraries for simple access
+# A wrapper on the bigquery libraries for simple access
 
 ### Install with pip
 
