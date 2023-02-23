@@ -17,5 +17,6 @@ from bigquerydave_package.bigquerydave import bq
   
   bq().list_bq_datasets()
   
-#### bq().list_bq_tables('watchful-lotus-364517.dave')
-#### bq().estimate_query('SELECT CURRENT_TIMESTAMP')
+  bq().list_bq_tables('watchful-lotus-364517.dave')
+  
+  bq().estimate_query('SELECT CURRENT_TIMESTAMP')
