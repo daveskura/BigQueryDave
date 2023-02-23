@@ -7,6 +7,7 @@ pip install bigquerydave_package
 ### import to your python script
 
 from bigquerydave_package.bigquerydave import gcp
+
 from bigquerydave_package.bigquerydave import bq
 
 ### try methods
