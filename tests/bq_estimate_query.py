@@ -2,7 +2,7 @@
   Dave Skura
 
 """
-from bigquerydave_package.bigquerydave import bq
+from bigquerydave.cost
 
 query = """
 	   SELECT name, COUNT(*) as name_count 

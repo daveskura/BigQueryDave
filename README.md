@@ -1,8 +1,18 @@
 # A wrapper on the bigquery libraries for simple access
 
+### Google install
+
+'''
+gcloud auth application-default login
+
+pip install --upgrade google-cloud-bigquery
+
+gcloud init 
+'''
+
 ### Install with pip
 
-pip install bigquerydave_package
+pip install bigquerydave
 
 ### import to your python script
 

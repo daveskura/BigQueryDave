@@ -10,25 +10,10 @@ from google.oauth2 import service_account
 from google.cloud import bigquery
 import sys
 
-class bq:
+
+class gcp:
 	def __init__(self): 
 		self.updated='Feb 22/2023'
-
-	def estimate_query(self,query):
-		client = bigquery.Client()
-
-		job_config = bigquery.QueryJobConfig(dry_run=True, use_query_cache=False)
-
-		query_job = client.query(
-				(
-						query
-				),
-				job_config=job_config
-		)  
-
-		# A dry run query completes immediately.
-		print("This query will process {} bytes.".format(query_job.total_bytes_processed))
-
 
 	def list_bq_tables(self,dataset_id):
 		client = bigquery.Client()
@@ -49,10 +34,6 @@ class bq:
 			for dataset in datasets:
 				print('\tdataset: ' + dataset.dataset_id)
 
-class gcp:
-	def __init__(self): 
-		self.updated='Feb 22/2023'
-	
 	def list_gcp_projects(self):
 		credentials = GoogleCredentials.get_application_default()
 		#print(credentials.to_json())
@@ -68,16 +49,6 @@ if __name__ == '__main__':
 	print('')
 	mygcp = gcp()
 	mybq = bq()
-	mybq.estimate_query('SELECT CURRENT_TIMESTAMP')
-
-	mybq.estimate_query(""" 
-	
-	   SELECT name, COUNT(*) as name_count 
-		 FROM `bigquery-public-data.usa_names.usa_1910_2013` 
-     WHERE state = 'WA' 
-     GROUP BY name
-
-	""")
 
 	#print(' projects:')
 	#mygcp.list_gcp_projects()
