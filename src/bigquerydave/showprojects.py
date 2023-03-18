@@ -30,7 +30,10 @@ class gcp_projects:
 		request = service.projects().list()
 		response = request.execute()
 		for project in response.get('projects', []):
-			print(project['projectId'])
+			projectid = project['projectId']
+			projectname = project['name']
+			print(projectname)
 	
 if __name__ == '__main__':
+	print('You have access to these projects')
 	gcp_projects()
