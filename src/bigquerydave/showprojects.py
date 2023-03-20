@@ -32,7 +32,7 @@ class gcp_projects:
 		for project in response.get('projects', []):
 			projectid = project['projectId']
 			projectname = project['name']
-			print(projectname)
+			print(projectname + ': ' + projectid)
 	
 if __name__ == '__main__':
 	print('You have access to these projects')
