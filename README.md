@@ -3,9 +3,15 @@
 ### Google install
 
 '''
-gcloud auth application-default login
+pip install google
+pip install google-api-python-client
+pip install --upgrade google-api-python-client
+pip3 install --upgrade oauth2client 
 
+pip install --upgrade google-cloud
 pip install --upgrade google-cloud-bigquery
+
+gcloud auth application-default login
 
 gcloud init 
 '''
