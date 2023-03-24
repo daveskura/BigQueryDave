@@ -1,0 +1,4 @@
+role 	 members
+roles/bigquery.user	user:sqlmaster7@gmail.com
+roles/browser	user:sqlmaster7@gmail.com
+roles/owner	user:dskura@gmail.com
