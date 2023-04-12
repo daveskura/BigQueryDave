@@ -2,6 +2,7 @@
   Dave Skura, 2023
 
 	gcloud auth application-default login
+	py -m bigquerydave_package.loadgcpfolders
 
 """
 import sys
@@ -63,7 +64,7 @@ class gcp_folders:
 			limit 500
 		"""
 		
-		data = schwiz.dbthings.sqlite_db.query(sql)
+		data = schwiz.dbthings.postgres_db.query(sql)
 		for row in data:
 			print(row[0])
 			folder_id = row[0] # '30263264461'
@@ -71,16 +72,31 @@ class gcp_folders:
 			f.write(content) 
 		f.close()
 		print(folder_filename, ' created')
-		
+
+	def load_table(self):
+		schwiz = schemawiz()
+		folder_filename = 'folder_details.tsv'
 		tablename = 'folder_details'
-		if schwiz.dbthings.sqlite_db.does_table_exist(tablename):
-			schwiz.justload_sqlite_from_csv(folder_filename,tablename,True)
+		if schwiz.dbthings.postgres_db.does_table_exist(tablename):
+			schwiz.justload_postgres_from_csv(folder_filename,tablename,True)
 		else:
-			schwiz.createload_sqlite_from_csv(folder_filename,tablename)
+			schwiz.createload_postgres_from_csv(folder_filename,tablename)
 
 		print(tablename,' loaded')
 
-
 if __name__ == '__main__':
-	print('Dont run this unless serious')
-	gcp_folders().load_gcp_folder_resources()
+	print('1. Create/Load folder details into folder_details.tsv')
+	print('2. Create/Load table folder_details from folder_details.tsv')
+	print('3. Cancel.')
+
+	selectchar = input('select (1,2,3): ') or '3'
+	print('')
+	if selectchar.upper() == '1':
+		print('Create/Load projects into projects.tsv')
+		gcp_folders().load_gcp_folder_resources()
+	elif selectchar.upper() == '2':
+		print('Create/Load table gcp_projects from projects.tsv')
+		gcp_folders().load_table()
+	else:
+		print('do nothing')
+

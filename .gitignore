@@ -1,0 +1,8 @@
+
+src/bigquerydave/.schemawiz_config1
+src/bigquerydave/bigquery_admin.tsv
+src/bigquerydave/bqtables.csv
+src/bigquerydave/bqdatasets.csv
+src/bigquerydave/gcsbuckets.tsv
+src/bigquerydave/local_sqlite_db
+src/bigquerydave/projects.tsv
