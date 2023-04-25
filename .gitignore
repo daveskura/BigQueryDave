@@ -6,3 +6,4 @@ src/bigquerydave/bqdatasets.csv
 src/bigquerydave/gcsbuckets.tsv
 src/bigquerydave/local_sqlite_db
 src/bigquerydave/projects.tsv
+src/bigquerydave/bqcolumns.csv

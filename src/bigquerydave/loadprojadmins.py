@@ -52,13 +52,12 @@ class gcpowners:
 			f.write('project_id \t role \t members\n')
 		
 		sql = """
-		 SELECT distinct project
-		 FROM bqdatasets
-		 WHERE project not like 'sys-%' and dataset not like 'has not enabled BigQuery.'
+		 SELECT project_id
+		 FROM ourprojects
 		 """
 		if missingonly:
-			sql += ' AND project NOT IN (SELECT DISTINCT project_id from bqadmins) '
-		sql += " ORDER BY project"
+			sql += ' AND project_id NOT IN (SELECT DISTINCT project_id from bqadmins) '
+		sql += " ORDER BY project_id"
 		data = schwiz.dbthings.postgres_db.query(sql)
 		if data != None:
 			for row in data:
