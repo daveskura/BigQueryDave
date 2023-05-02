@@ -42,10 +42,10 @@ class gcsbuckets:
 		bucketfilename = 'gcsbuckets.tsv'
 		tablename = 'gcsbuckets'
 
-		if schwiz.dbthings.sqlite_db.does_table_exist(tablename):
-			schwiz.justload_sqlite_from_csv(bucketfilename,tablename,True)
+		if schwiz.dbthings.postgres_db.does_table_exist(tablename):
+			schwiz.justload_postgres_from_csv(bucketfilename,tablename,True)
 		else:
-			r = schwiz.createload_sqlite_from_csv(bucketfilename,tablename)
+			r = schwiz.createload_postgres_from_csv(bucketfilename,tablename)
 
 		print(tablename,' loaded')
 
@@ -65,7 +65,7 @@ class gcsbuckets:
 			f = open(bucketfilename,'w')
 			f.write('project\tbucket\tstorageclass\tfilenanme\tsize\n')
 
-		data = schwiz.dbthings.sqlite_db.query(sql)
+		data = schwiz.dbthings.postgres_db.query(sql)
 		for row in data:
 			f.write(self.get_bucket_details(row[0],bucketname))
 
@@ -88,8 +88,8 @@ class gcsbuckets:
 					AND P.projectid not in (SELECT DISTINCT project FROM gcsbuckets)
 		"""
 
-		print(schwiz.dbthings.sqlite_db.export_query_to_str(sql))
-		print('projects to do:' + str(schwiz.dbthings.sqlite_db.queryone(sql2)))
+		print(schwiz.dbthings.postgres_db.export_query_to_str(sql))
+		print('projects to do:' + str(schwiz.dbthings.postgres_db.queryone(sql2)))
 
 if __name__ == '__main__':
 	print('1. Create/Overwrite buckets into gcsbuckets.tsv for all projects in gcp_projects.')
