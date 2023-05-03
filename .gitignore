@@ -7,3 +7,5 @@ src/bigquerydave/gcsbuckets.tsv
 src/bigquerydave/local_sqlite_db
 src/bigquerydave/projects.tsv
 src/bigquerydave/bqcolumns.csv
+src/bigquerydave/gcsbuckets_bup.tsv
+src/bigquerydave/projectbuckets.tsv
