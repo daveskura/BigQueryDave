@@ -50,11 +50,12 @@ class projectbuckets:
 	def loadbuckets(self,project_id='',missingonly=True):
 		schwiz = schemawiz()
 		sql = """
+			
 			SELECT P.projectid
 			FROM gcp_projects P
 				INNER JOIN (SELECT project_id as projectid FROM ourprojects)L USING (projectid)
 			WHERE P.projectid not like 'sys%' AND P.projectid like '%lake%'
-			 and (P.projectid like '%lake-exp%' or P.projectid like '%lake-val%'  or P.projectid like '%lake-prd%')
+			 and (P.projectid like '%lake%')
 
 		"""
 
@@ -81,7 +82,7 @@ class projectbuckets:
 				INNER JOIN (SELECT project_id as projectid FROM ourprojects)L USING (projectid)
 
 			WHERE P.projectid not like 'sys%' 
-				  AND (P.projectid like '%lake-exp%' or P.projectid like '%lake-val%'  or P.projectid like '%lake-prd%')
+				  AND  (P.projectid like '%lake%')
 					AND P.projectid not in (SELECT DISTINCT project FROM projectbuckets)
 		"""
 		sql = 'SELECT P.projectid ' + sqlbase
