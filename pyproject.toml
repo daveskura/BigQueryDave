@@ -4,8 +4,8 @@ requires = ["hatchling","google.cloud"]
 build-backend = "hatchling.build"
 
 [project]
-name = "bigquerydave_package"
-version = "1.0.1"
+name = "bigquerydave"
+version = "1.0.3"
 authors = [
   { name="Dave Skura", email="dskura@gmail.com" },
 ]

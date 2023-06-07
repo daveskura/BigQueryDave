@@ -74,8 +74,12 @@ class iamshow:
 				print(self.get_policy(projectids[selectnbr-1]))
 
 if __name__ == '__main__':
-	x = iamshow('doit')
-	#print(x.get_policy('watchful-lotus-364517'))
+	#x = iamshow('doit')
+	x = iamshow().get_policy('lt-dia-lake-val-fulfillment')
+	lines = x.split('n')
+	for i in range(0,len(lines)):
+		if lines[i].find('lcl-dia-data-mgmt-architects@loblaw.ca') > 0:
+			print(lines[i])
 	#x.savepolicyfile('watchful-lotus-364517','out.csv')
 	
 
