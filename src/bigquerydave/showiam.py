@@ -75,10 +75,10 @@ class iamshow:
 
 if __name__ == '__main__':
 	#x = iamshow('doit')
-	x = iamshow().get_policy('lt-dia-lake-val-fulfillment')
+	x = iamshow().get_policy('lt-dia-lake-exp-techcompute')
 	lines = x.split('n')
 	for i in range(0,len(lines)):
-		if lines[i].find('lcl-dia-data-mgmt-architects@loblaw.ca') > 0:
+		if lines[i].find('lcl-dia') > 0:
 			print(lines[i])
 	#x.savepolicyfile('watchful-lotus-364517','out.csv')
 	
