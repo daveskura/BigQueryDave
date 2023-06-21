@@ -1,0 +1,1 @@
+bq load --source_format=CSV --skip_leading_rows=1 bq_load_dataset.data .\data\ossn_users_20220925-17-48.csv	guid:numeric,type:STRING,username:STRING,email:string,password:string,salt:string,first_name:string,last_name:string,last_login:numeric,last_activity:numeric,activation :string,time_created:numeric

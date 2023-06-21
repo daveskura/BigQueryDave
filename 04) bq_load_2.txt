@@ -1,0 +1,3 @@
+bq load --autodetect --replace --source_format=CSV ossn.current_ossn_user ossn_users.csv
+
+

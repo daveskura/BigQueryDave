@@ -1,0 +1,20 @@
+query byte scan charges:
+	$5 per 1000GB (1TB)
+	$1 per 200GB
+	$0.00005 per 10 MB (minimum charge)
+
+
+Google Console: https://console.cloud.google.com/welcome?project=daveskura-stocks
+
+Enable billing in GCP for buckets
+
+CREATE a project in cloud console:mysql-work
+
+CREATE a bucket: dskura-mysql-bucket
+
+Install Google Cloud CLI including gsutil: https://cloud.google.com/storage/docs/gsutil_install
+
+	https://cloud.google.com/sdk/docs
+	https://cloud.google.com/sdk/docs/install
+
+

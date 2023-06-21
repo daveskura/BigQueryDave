@@ -1,0 +1,2 @@
+bq query --nouse_legacy_sql --format=csv "SELECT * FROM us-activtrak-ac-prod.661198.logsV2" > logsV2.csv
+
